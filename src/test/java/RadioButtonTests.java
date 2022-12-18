@@ -19,7 +19,6 @@ public class RadioButtonTests {
 
     @BeforeMethod(groups = "radio")
     public void setUp() {
-        //       WebDriver driver =WebDriverRunner.getWebDriver();
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.reportsFolder = "src/main/resources/RadioButtonFailedTests";
         Configuration.screenshots = true;

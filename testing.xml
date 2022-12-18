@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite" >
+    <test name="config">
+                <classes>
+            <class name="ConfigTests">
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="checkboxTest">
+        <groups>
+            <run>
+                <include name="checkbox"></include>
+            </run>
+        </groups>
+                <classes>
+              <class name="CheckboxTests">
+            </class>
+        </classes>
+    </test>
+
+    <test name="radioTest">
+        <groups>
+            <run>
+                <include name="radio"></include>
+            </run>
+        </groups>
+                <classes>
+            <class name="RadioButtonTests">
+            </class>
+        </classes>
+    </test>
+
+</suite>

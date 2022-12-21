@@ -2,7 +2,7 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestSuite" parallel="classes" thread-count="2" >
+<suite name="TestSuite" parallel="classes" thread-count="2">
     <test name="config">
         <classes>
             <class name="ConfigTests">
@@ -17,13 +17,13 @@
                 <include name=".*End"></include>
 
             </define>
-            <run>
-                <include name="all"></include>
-            </run>
+            <!--            <run>-->
+            <!--                <include name="all"></include>-->
+            <!--            </run>-->
         </groups>
         <classes>
-            <class name="CheckboxTests"></class>
             <class name="RadioButtonTests"></class>
+            <class name="CheckboxTests"></class>
         </classes>
     </test>
 

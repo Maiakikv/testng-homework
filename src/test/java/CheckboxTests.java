@@ -5,31 +5,23 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class CheckboxTests {
- //   All tests should be started with new webdriver instance * - აქ ვიფიქრე, ეს იგულისხმებოდა, მაგრამ ტესტის გაშვებას ხელს უშლიდა და იყოს ასე
-//
-//    @BeforeTest
-//    public void webdriverInstance() {
-//        System.setProperty("webdriver.chrome.driver", "C:\\");
-//        WebDriver driver = new ChromeDriver();
-//    }
+    SoftAssert softAssert = new SoftAssert();
 
 
-    @BeforeMethod(groups = "checkbox")
+    @BeforeMethod(groups = {"FrontEnd", "BackEnd"})
     public void setUp() {
-
         Configuration.baseUrl = "http://the-internet.herokuapp.com";
         Configuration.reportsFolder = "src/main/resources/CheckboxFailedTests";
         Configuration.screenshots = true;
-
     }
 
-    @Test(groups = "checkbox", priority = 0)
+    @Test(groups = "FrontEnd")
     public void unCheckBox() {
-        SoftAssert softAssert = new SoftAssert();
         open("/checkboxes ");
         ElementsCollection checkBoxes = $("#checkboxes").findAll("input");
         checkBoxes.stream().forEach(che -> che.setSelected(false));
@@ -40,10 +32,9 @@ public class CheckboxTests {
         softAssert.assertAll();
     }
 
-    @Test(groups = "checkbox", priority = 1)
+    @Test(groups = "BackEnd")
     public void checkbox() {
         open("/checkboxes ");
-        SoftAssert softAssert = new SoftAssert();
         ElementsCollection checkBoxes = $("#checkboxes").findAll("input");
         for (SelenideElement el : checkBoxes
         ) {
@@ -55,7 +46,6 @@ public class CheckboxTests {
         }
         softAssert.assertAll();
     }
-
 
 }
 

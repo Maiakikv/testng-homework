@@ -1,6 +1,7 @@
 import com.codeborne.selenide.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -10,14 +11,8 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RadioButtonTests {
-//    @BeforeTest
-//    public void webdriverInstance() {
-//        System.setProperty("webdriver.chrome.driver", "C:\\");
-//        WebDriver driver = new ChromeDriver();
-//    }
-
-
-    @BeforeMethod(groups = "radio")
+    SoftAssert softAssert = new SoftAssert();
+    @BeforeMethod(groups = {"FrontEnd", "BackEnd"})
     public void setUp() {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.reportsFolder = "src/main/resources/RadioButtonFailedTests";
@@ -25,9 +20,8 @@ public class RadioButtonTests {
     }
 
 
-    @Test(groups = "radio", priority = 0)
+    @Test(groups = "FrontEnd", priority = 1)
     public void yesButtonTest() {
-        SoftAssert softAssert = new SoftAssert();
         open("/radio-button");
         SelenideElement yesButton = $("[for='yesRadio']");
         yesButton.click();
@@ -37,14 +31,12 @@ public class RadioButtonTests {
 
     }
 
-    @Test(groups = "radio", priority = 1)
+    @Test(groups = "BackEnd", priority = 0)
     public void noButtonTest() {
-        SoftAssert softAssert = new SoftAssert();
         open("/radio-button");
         SelenideElement noButton = $("[for='#noRadio']");
         softAssert.assertTrue(noButton.isEnabled());
         softAssert.assertAll();
-
-
     }
-}
+
+   }

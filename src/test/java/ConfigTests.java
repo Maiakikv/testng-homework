@@ -10,7 +10,7 @@ public class ConfigTests {
     public void configTests() {
         Configuration.browserSize="2000x1800";
         Configuration.savePageSource =false;
-        Configuration.timeout= 10000;
+        Configuration.timeout= 12000;
         Configuration.holdBrowserOpen=false;
         Configuration.reopenBrowserOnFail = true;
         Configuration.assertionMode = AssertionMode.SOFT;

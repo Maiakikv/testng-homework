@@ -2,36 +2,28 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestSuite" >
+<suite name="TestSuite" parallel="classes" thread-count="2" >
     <test name="config">
-                <classes>
+        <classes>
             <class name="ConfigTests">
             </class>
         </classes>
     </test>
 
 
-    <test name="checkboxTest">
+    <test name="allTests">
         <groups>
-            <run>
-                <include name="checkbox"></include>
-            </run>
-        </groups>
-                <classes>
-              <class name="CheckboxTests">
-            </class>
-        </classes>
-    </test>
+            <define name="all">
+                <include name=".*End"></include>
 
-    <test name="radioTest">
-        <groups>
+            </define>
             <run>
-                <include name="radio"></include>
+                <include name="all"></include>
             </run>
         </groups>
-                <classes>
-            <class name="RadioButtonTests">
-            </class>
+        <classes>
+            <class name="CheckboxTests"></class>
+            <class name="RadioButtonTests"></class>
         </classes>
     </test>
 

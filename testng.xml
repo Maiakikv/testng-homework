@@ -2,35 +2,36 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestSuite" >
-    <test name="config">
-                <classes>
-            <class name="ConfigTests">
+<suite name="TestSuite">
+        <test name="parametersTest">
+        <parameter name="firstName" value="Maia"></parameter>
+        <parameter name="lastName" value="Kikvadze"></parameter>
+        <parameter name="gender" value="Female"></parameter>
+        <parameter name="mobileNumber" value="599041180"></parameter>
+        <classes>
+            <class name="Parametrization">
             </class>
         </classes>
     </test>
 
-
-    <test name="checkboxTest">
-        <groups>
-            <run>
-                <include name="checkbox"></include>
-            </run>
-        </groups>
-                <classes>
-              <class name="CheckboxTests">
+    <test name="parametersTest1">
+        <parameter name="firstName" value="Giorgi"></parameter>
+        <parameter name="lastName" value="Kiladze"></parameter>
+        <parameter name="gender" value="Male"></parameter>
+        <parameter name="mobileNumber" value="599055580"></parameter>
+        <classes>
+            <class name="Parametrization">
             </class>
         </classes>
     </test>
 
-    <test name="radioTest">
-        <groups>
-            <run>
-                <include name="radio"></include>
-            </run>
-        </groups>
-                <classes>
-            <class name="RadioButtonTests">
+    <test name="parametersTest2">
+        <parameter name="firstName" value="raime"></parameter>
+        <parameter name="lastName" value="vinme"></parameter>
+        <parameter name="gender" value="Other"></parameter>
+        <parameter name="mobileNumber" value="5444444"></parameter>
+        <classes>
+            <class name="Parametrization">
             </class>
         </classes>
     </test>

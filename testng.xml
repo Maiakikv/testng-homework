@@ -2,37 +2,28 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="TestSuite">
-        <test name="parametersTest">
-        <parameter name="firstName" value="Maia"></parameter>
-        <parameter name="lastName" value="Kikvadze"></parameter>
-        <parameter name="gender" value="Female"></parameter>
-        <parameter name="mobileNumber" value="599041180"></parameter>
+<suite name="TestSuite" parallel="classes" thread-count="2">
+    <test name="config">
         <classes>
-            <class name="Parametrization">
+            <class name="ConfigTests">
             </class>
         </classes>
     </test>
 
-    <test name="parametersTest1">
-        <parameter name="firstName" value="Giorgi"></parameter>
-        <parameter name="lastName" value="Kiladze"></parameter>
-        <parameter name="gender" value="Male"></parameter>
-        <parameter name="mobileNumber" value="599055580"></parameter>
-        <classes>
-            <class name="Parametrization">
-            </class>
-        </classes>
-    </test>
 
-    <test name="parametersTest2">
-        <parameter name="firstName" value="raime"></parameter>
-        <parameter name="lastName" value="vinme"></parameter>
-        <parameter name="gender" value="Other"></parameter>
-        <parameter name="mobileNumber" value="5444444"></parameter>
+    <test name="allTests">
+        <groups>
+            <define name="all">
+                <include name=".*End"></include>
+
+            </define>
+            <!--            <run>-->
+            <!--                <include name="all"></include>-->
+            <!--            </run>-->
+        </groups>
         <classes>
-            <class name="Parametrization">
-            </class>
+            <class name="RadioButtonTests"></class>
+            <class name="CheckboxTests"></class>
         </classes>
     </test>
 
